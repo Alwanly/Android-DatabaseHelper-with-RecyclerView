@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Article</string>
+    <string name="title_home">Good Morning</string>
+    <string name="article_list">Article List</string>
+    <string name="create_list">Create List</string>
+    <string name="create_article">Create Article</string>
+    <string name="post">POST</string>
+    <string name="title">Title</string>
+    <string name="article">Article</string>
+    <string name="author">Author</string>
+</resources>
