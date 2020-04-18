@@ -53,20 +53,19 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/author_input_layout"
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/et_author"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Author"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
+            android:layout_height="200dp"
+            android:id="@+id/img_article"
+            android:src="@drawable/ic_launcher_background"
+            android:layout_margin="10dp"/>
+        <Button
+            android:onClick="galleryImage"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:text="Upload"
+            android:background="@color/colorPrimary"
+            android:id="@+id/btn_upload_img"/>
     </LinearLayout>
 
     <Button

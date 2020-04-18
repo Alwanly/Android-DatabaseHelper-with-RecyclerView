@@ -1,11 +1,20 @@
 package com.example.mad.articlenews;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.database.Cursor;
 import android.os.Bundle;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,34 +26,50 @@ public class ListActivity extends AppCompatActivity {
     private RecyclerView.Adapter articleadapter;
     private RecyclerView.LayoutManager layoutManager;
     List<ArticleDetails> articleDetailsList;
-
+    private DatabaseReference myRef;
+    FirebaseAuth mFirebaseAuth;
+    FirebaseUser mFirebaseUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        databaseHelper= new DatabaseHelper(this);
-        recyclerView= findViewById(R.id.recycler_view);
 
+        databaseHelper = new DatabaseHelper(this);
+        recyclerView = findViewById(R.id.recycler_view);
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        mFirebaseUser = mFirebaseAuth.getCurrentUser();
+        String tokenEmail = mFirebaseUser.getUid();
+        myRef = FirebaseDatabase.getInstance().getReference("Article").child(tokenEmail);
 
         articleDetailsList = new ArrayList<ArticleDetails>();
-        Cursor cur = databaseHelper.getAllData();
-        if (cur != null ){
-            while (cur.moveToNext()){
-                ArticleDetails articleDetailsItem = new ArticleDetails();
-                articleDetailsItem.setId(cur.getString(0));
-                articleDetailsItem.setTitle(cur.getString(1));
-                articleDetailsItem.setArticle(cur.getString(2));
-                articleDetailsItem.setAuthor(cur.getString(3));
-                articleDetailsList.add(articleDetailsItem);
+//
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                articleDetailsList.clear();
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    ArticleDetails articleDetailsItem = new ArticleDetails(
+                            ds.child("title").getValue().toString(),
+                            ds.child("article").getValue().toString(),
+                            ds.child("author").getValue().toString(),
+                            ds.child("id").getValue().toString(),
+                            ds.child("imagePost").getValue().toString()
+                    );
+                    articleDetailsList.add(articleDetailsItem);
+                    layoutManager = new LinearLayoutManager(ListActivity.this);
+                    articleadapter = new ArticleAdapter(articleDetailsList);
+                    recyclerView.setLayoutManager(layoutManager);
+                    recyclerView.setAdapter(articleadapter);
+                }
             }
-        }
 
-        cur.close();
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-        layoutManager = new LinearLayoutManager(this);
-        articleadapter = new ArticleAdapter(articleDetailsList);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(articleadapter);
+            }
+        });
+
     }
+
 }

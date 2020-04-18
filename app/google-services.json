@@ -1,0 +1,117 @@
+{
+  "project_info": {
+    "project_number": "911674490217",
+    "firebase_url": "https://penilaian-starter-d1613.firebaseio.com",
+    "project_id": "penilaian-starter-d1613",
+    "storage_bucket": "penilaian-starter-d1613.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911674490217:android:c67601a774313128dad1f8",
+        "android_client_info": {
+          "package_name": "com.example.mad.articlenews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "911674490217-3bono1jp2sofpdb10sv33sjvk73qlqfh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mad.articlenews",
+            "certificate_hash": "d93a5a9f6e015e3ba7707de16c4da96b1068801f"
+          }
+        },
+        {
+          "client_id": "911674490217-jv201e4u4oj37dlt67famun90ds7svh7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGbSYzf2ammRO3vPw2vpF7cEucxyaz1IA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "911674490217-qrd7o3fmlnpm36stsnliea0ded2gecl6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911674490217:android:5310c5fc3623171adad1f8",
+        "android_client_info": {
+          "package_name": "com.example.penilaian"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "911674490217-uahtjr40o9d6mje76ttjin94rrt12uq4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.penilaian",
+            "certificate_hash": "5a971cf92cfbe25e22093ce15c279b8f4fe4b238"
+          }
+        },
+        {
+          "client_id": "911674490217-4a4b3gsqkso64uh8ii2l864ia8u3juai.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.penilaian",
+            "certificate_hash": "d3eb67a0b289a98035910332e4080d813d15bd1a"
+          }
+        },
+        {
+          "client_id": "911674490217-7c3dro7q32imvb4ff8d2adogd7jsvu2m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.penilaian",
+            "certificate_hash": "7b47e9d62ca788f62a4f4a8dbd1cc47fe6f9632e"
+          }
+        },
+        {
+          "client_id": "911674490217-qg5q3am4hm6cp4q2o1vqnb2o2q53uopd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.penilaian",
+            "certificate_hash": "fad6d7153f6b40c568f1667eb23b3dab846d3e8a"
+          }
+        },
+        {
+          "client_id": "911674490217-q6so8u1uo0plojcsgjdbue47v412o3v8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.penilaian",
+            "certificate_hash": "d93a5a9f6e015e3ba7707de16c4da96b1068801f"
+          }
+        },
+        {
+          "client_id": "911674490217-jv201e4u4oj37dlt67famun90ds7svh7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGbSYzf2ammRO3vPw2vpF7cEucxyaz1IA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "911674490217-qrd7o3fmlnpm36stsnliea0ded2gecl6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

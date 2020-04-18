@@ -7,6 +7,10 @@
     android:orientation="vertical"
     tools:context=".ArticleDetailActivity">
 
+    <ImageView
+        android:id="@+id/img_post"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"/>
 
     <TextView
         android:layout_margin="10dp"

@@ -8,4 +8,5 @@
     <string name="title">Title</string>
     <string name="article">Article</string>
     <string name="author">Author</string>
+    <string name="google">Google</string>
 </resources>

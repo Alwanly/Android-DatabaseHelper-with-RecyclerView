@@ -6,8 +6,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -43,6 +46,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleH
         holder.tvTitle.setText(articleDetails.getTitle());
         holder.tvAuthor.setText(articleDetails.getAuthor());
         holder.tvArticle.setText(articleDetails.getArticle());
+        Glide.with(context).load(articleDetails.getImagePost()).into(holder.imgPost);
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +58,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleH
                 detail.putExtra("TITLE",articleDetails.getTitle());
                 detail.putExtra("ARTICLE",articleDetails.getArticle());
                 detail.putExtra("AUTHOR",articleDetails.getAuthor());
-
+                detail.putExtra("IMAGE",articleDetails.getImagePost());
                 Toast.makeText(context,articleDetails.getId(),Toast.LENGTH_SHORT).show();
 
                 context.startActivity(detail);
@@ -71,12 +75,14 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleH
     public class ArticleHolder extends RecyclerView.ViewHolder {
         TextView tvTitle,tvAuthor,tvArticle;
         CardView cardView;
+        ImageView imgPost;
         public ArticleHolder(@NonNull View itemView) {
             super(itemView);
             tvArticle = itemView.findViewById(R.id.tv_article);
             tvTitle = itemView.findViewById(R.id.tv_title);
             tvAuthor = itemView.findViewById(R.id.tv_author);
             cardView = itemView.findViewById(R.id.card_article);
+            imgPost = itemView.findViewById(R.id.img_post);
         }
     }
 }
